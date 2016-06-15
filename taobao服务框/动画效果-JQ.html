@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+* {
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.wrapper {
+  margin: 30px auto;
+  width: 376px;
+  border: 2px solid lightgrey;
+}
+.wrapper a {
+  display: inline-block;
+  width: 58px;
+  height: 25px;
+  line-height: 25px;
+  position: relative;
+  padding-top: 40px;
+  border: 1px solid #ccc;
+  margin: 10px 17px;
+  color:#000;
+  text-align: center;
+  font-size: 12px;
+  float: left;
+}
+.wrapper a i {
+  display: inline-block;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  text-align: center;
+  opacity: 1;
+  filter: alpha(opcity=100);
+  width: 100%;
+}
+.wrapper a:hover{
+   color: #f00;
+}
+</style>
+<body>
+<div class="wrapper clearfix">
+      <a href="#"><i><img src="images/game.png" alt=""></i><p>游戏</p></a>
+      <a href="#"><i><img src="images/insurance.png" alt=""></i><p>保险</p></a>
+      <a href="#"><i><img src="images/lottery.png" alt=""></i><p>彩票</p></a>
+      <a href="#"><i><img src="images/money.png" alt=""></i><p>金融</p></a>
+      <a href="#"><i><img src="images/movie.png" alt=""></i><p>电影</p></a>
+      <a href="#"><i><img src="images/sell.png" alt=""></i><p>买卖</p></a>
+      <a href="#"><i><img src="images/telephone.png" alt=""></i><p>电话</p></a>
+      <a href="#"><i><img src="images/travel.png" alt=""></i><p>旅游</p></a>
+</div>
+<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+	$('.wrapper a').mouseenter(function(){
+		$(this).find('i').animate({top:'-5px',opacity:'0'},300,function(){
+		$(this).css({top:'15px'});
+		$(this).animate({top:'5px',opacity:'1'},200);
+	})
+	})
+</script>
+</body>
+</html>

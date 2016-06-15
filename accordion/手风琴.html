@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+	ul, li {
+	  margin: 0;
+	  padding: 0;
+	}
+
+	li {
+	  list-style-type: none
+	}
+	.items {
+		width: 940px;
+		margin: 0 auto;
+	}
+	.items > li {
+	  width: 940px;
+	  margin-bottom: 5px;
+	  border-radius: 8px;
+	  padding: 10px;
+	}
+
+	.items > li span {
+	  display: block;
+	  height: 30px;
+	  line-height: 30px;
+	  margin-bottom: 5px;
+	  box-shadow: 2px 2px 5px #000;
+	  background-color: #ccc;
+	  text-align: center;
+	  cursor: pointer;
+	}
+
+
+	.items > li img {
+	  height: 0;
+	  transition: height .4s;
+	  overflow: hidden;
+	}
+
+	.items > li.selected img{
+	  width: 940px;
+	  height: 529px;
+	}
+
+	hr {
+	  margin: 50px auto;
+	  width: 940px;
+	}
+
+</style>
+</head>
+<body>
+    <ul class="items">
+    	<li>
+      		<span class="description">Mountain</span>
+      		<img src="img/example-slide-1.jpg" alt="">
+    	</li>
+    	<li>
+      		<span class="description">Valley</span>
+      		<img src="img/example-slide-2.jpg" alt="">
+    	</li>
+    	<li>
+      		<span class="description">Woods</span>
+      		<img src="img/example-slide-3.jpg" alt="">
+    	</li>
+    	<li>
+      		<span class="description">River</span>
+      		<img src="img/example-slide-4.jpg" alt="">
+    	</li>
+  	</ul>
+
+  <hr>
+
+  	<ul class="items">
+    	<li>
+      		<span class="description">Mountain</span>
+      		<img src="img/example-slide-1.jpg" alt="">
+    	</li>
+    	<li>
+      		<span class="description">Valley</span>
+      		<img src="img/example-slide-2.jpg" alt="">
+    	</li>
+    	<li>
+      		<span class="description">Woods</span>
+      		<img src="img/example-slide-3.jpg" alt="">
+   		</li>
+    	<li>
+      		<span class="description">River</span>
+      		<img src="img/example-slide-4.jpg" alt="">
+    	</li>
+  	</ul>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+<script>
+	(function($){
+  		$.accordion = function(node){
+    		var child = node.children().get(0).nodeName.toLowerCase();
+    		node.on('click', child, function(e){
+      			if ($(this).hasClass('selected')) {
+        			$(this).removeClass('selected');
+      			} else {
+       				$(this).addClass('selected')
+             		.siblings('.selected')
+             		.removeClass('selected'); 
+     			}
+    		});
+  		};
+	})(jQuery);
+
+$.accordion($('.items'));
+</script>
+</body>
+</html>

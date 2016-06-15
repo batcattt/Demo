@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>task29-1</title>
+	<title>goTop</title>
 	<style>
 		p {
 			border: 1px solid #000;
@@ -84,6 +84,7 @@
 
 	var $goTop = $('<div id="go-top">回到顶部</div>');
 	$goTop.appendTo($('body'));
+	
 	function goTop() {
 		$goTop.on('click',function(){
 			$(window).scrollTop(0);
